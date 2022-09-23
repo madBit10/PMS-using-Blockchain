@@ -1,4 +1,3 @@
-import "./App.css";
 import { db } from "./firebase";
 import { ref, onValue } from "firebase/database";
 import { useState, useEffect } from "react";
@@ -20,12 +19,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <>
       <h1>Humidity: {data.Humidity}</h1>
       <h1>Temperature: {data.Temperature}</h1>
       <h1>Moisture: {data.Moisture}</h1>
       <h1>Pump: {data.Pump}</h1>
-    </div>
+    </>
   );
 }
 export default App;
