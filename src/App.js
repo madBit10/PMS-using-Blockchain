@@ -1,30 +1,29 @@
 import { db } from "./firebase";
 import { ref, onValue } from "firebase/database";
 import { useState, useEffect } from "react";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [data, setData] = useState([]);
+ 
+
+  //Firebase data
+  const [data, setData] = useState({});
+
+  
 
   //read
   useEffect(() => {
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
-      setData({
-        Humidity: data.Humidity,
-        Temperature : data.Temperature,
-        Moisture: data.Moisture,
-        Pump: data.Pump
-      })
+      setData(data);
     });
   }, []);
 
   return (
     <>
-      <h1>Humidity: {data.Humidity}</h1>
-      <h1>Temperature: {data.Temperature}</h1>
-      <h1>Moisture: {data.Moisture}</h1>
-      <h1>Pump: {data.Pump}</h1>
+     <Sidebar/> 
     </>
   );
 }
+
 export default App;
