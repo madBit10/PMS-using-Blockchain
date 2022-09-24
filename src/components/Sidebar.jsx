@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Nav from "react-bootstrap/Nav";
-import Icon from "./Icon";
+import Icon from "./icons/Icon";
 
 function Sidebar() {
   //offcanvas states
