@@ -6,9 +6,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Icon from "./components/Icon";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWaveSquare } from '@fortawesome/free-solid-svg-icons'
+import { faWater } from '@fortawesome/free-solid-svg-icons'
+import { faThermometerHalf } from '@fortawesome/free-solid-svg-icons'
+import { faDroplet } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   //Firebase data
@@ -18,6 +19,7 @@ function App() {
   const right_side = {
     backgroundColor: "#fafafa",
   };
+
 
   //read
   useEffect(() => {
@@ -37,20 +39,19 @@ function App() {
                 <Sidebar />
               </Col>
             </Row>
-            <Row className="pt-3 justify-content-center">
+            <Row className="justify-content-center">
             <Col sm={2}></Col>
               <Col sm={4}>
-                <Card>
+                <Card className='mt-3'>
                   <div className="p-3">
-                    <Icon icon_name="Temperature.png" h="15%" w="15%" />
+                    <FontAwesomeIcon  style ={{fontSize : '30px', color : '#646e95'}} icon={faWater} />
                   </div>
                 </Card>
               </Col>
               <Col sm={4}>
-                <Card className="pl-2">
+                <Card className='mt-3'>
                   <div className="p-3">
-                    <Icon icon_name="humidity (3).png" h="15%" w="15%" />
-                    <FontAwesomeIcon icon={faWaveSquare} />
+                    <FontAwesomeIcon style ={{fontSize : '30px', color : '#b77f53'}} icon={faThermometerHalf} />
                   </div>
                 </Card>
               </Col>
@@ -58,17 +59,16 @@ function App() {
             <Row className=" justify-content-center">
             <Col sm={2}></Col>
               <Col sm={4}>
-                <Card>
+                <Card className='mt-3'>
                   <div className="p-3">
-                    <Icon icon_name="Temperature.png" h="15%" w="15%" />
+                    <FontAwesomeIcon icon={faWater} />
                   </div>
                 </Card>
               </Col>
               <Col sm={4}>
-                <Card className="pl-2">
+                <Card className='mt-3'>
                   <div className="p-3">
-                    <Icon icon_name="humidity (3).png" h="15%" w="15%" />
-                    <FontAwesomeIcon icon="fa-solid fa-droplet-percent" />
+                    <FontAwesomeIcon  style ={{fontSize : '30px', color : '#395b5d'}} icon={faDroplet} />
                   </div>
                 </Card>
               </Col>
