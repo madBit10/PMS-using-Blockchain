@@ -1,8 +1,9 @@
-import React from 'react'
-import { useState } from "react"
-import Button from "react-bootstrap/Button"
-import Offcanvas from "react-bootstrap/Offcanvas"
-import Nav from "react-bootstrap/Nav"
+import React from "react";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Nav from "react-bootstrap/Nav";
+import Icon from "./Icon";
 
 function Sidebar() {
   //offcanvas states
@@ -29,9 +30,12 @@ function Sidebar() {
         Launch
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={show} onHide={handleClose} style ={{ width : '300px'}}>
         <Offcanvas.Header closeButton style={background}>
-          <Offcanvas.Title>Magna</Offcanvas.Title>
+          <Offcanvas.Title>
+            <Icon icon_name="logo.jpg" h='10%' w='10%'/>
+            Magna
+          </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav defaultActiveKey="/home" className="flex-column">
@@ -42,7 +46,7 @@ function Sidebar() {
         </Offcanvas.Body>
       </Offcanvas>
     </>
-  )
+  );
 }
 
-export default Sidebar 
+export default Sidebar;
