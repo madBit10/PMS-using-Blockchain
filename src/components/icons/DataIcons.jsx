@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWater } from "@fortawesome/free-solid-svg-icons";
 import { faThermometerHalf } from "@fortawesome/free-solid-svg-icons";
-import { faDroplet } from "@fortawesome/free-solid-svg-icons";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons"
+import { faSeedling } from "@fortawesome/free-solid-svg-icons";
+
 import Icon from "./Icon";
 
 const DataIcons = ({ type }) => {
@@ -9,7 +11,7 @@ const DataIcons = ({ type }) => {
   let color;
   let bgColor;
   if (type == "water") {
-    icon = faWater;
+    icon = faDroplet;
     color = "#646e95";
     bgColor = "#cbd7ff";
   }
@@ -19,9 +21,15 @@ const DataIcons = ({ type }) => {
     bgColor = "#f3c097";
   }
   if (type == "humid") {
-    icon = faDroplet;
+    icon = faWater;
     color = "#58896b";
     bgColor = "#c1f0d1";
+  }
+  if (type == "plant") {
+    icon = faSeedling;
+    color = "#58896b";
+    bgColor = "#c1f0d1";
+
   }
   if (type == "pump") {
     return (

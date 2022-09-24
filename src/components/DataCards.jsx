@@ -8,7 +8,7 @@ const DataCards = ({ type , data }) => {
   
   if (type=="water" ){
     parameters="Moisture";
-    color="#cbd7ff";
+    color="#646e95";
     units="_"
     if(data==1){
       data="Present"

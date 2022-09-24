@@ -30,11 +30,10 @@ function Sidebar() {
         Launch
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose} style ={{ width : '300px'}}>
+      <Offcanvas show={show} onHide={handleClose} style ={{ width : '200px'}}>
         <Offcanvas.Header closeButton style={background}>
-          <Offcanvas.Title>
-            <Icon icon_name="logo.jpg" h='10%' w='10%'/>
-            Magna
+          <Offcanvas.Title >
+            <Icon icon_name="logo.jpg" h='5rem' w='5rem'/>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>

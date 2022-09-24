@@ -12,3 +12,20 @@
     height: 50px;
     width : 50px;
 }
+
+.line {
+    width: 70%;
+     margin-right: auto; 
+     margin-left: auto;
+}
+
+.card-bg-1{
+    background-color: #c1f0d1;
+    border-width: 0ch;
+    height: 230px;
+}
+.card-bg-2{
+    background-color: #cbd7ff;
+    border-width: 0ch;
+    height: 230px;
+}
