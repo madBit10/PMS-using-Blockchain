@@ -6,7 +6,7 @@ const DataCards = ({ type , data }) => {
       <Card className="mt-3">
         <div className="p-3">
           <DataIcons type={`${type}`} />
-          <h1>{data}hello</h1>
+          <h1>{data}</h1>
         </div>
       </Card>
     </>
