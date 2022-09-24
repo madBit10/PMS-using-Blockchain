@@ -5,21 +5,27 @@ const DataCards = ({ type , data }) => {
   let parameters;
   let color;
   let units;
-  if(data==1){
-    data="On"
-  }else if(data == 0){
-    data="Off"
-  }
+  
   if (type=="water" ){
     parameters="Moisture";
     color="#cbd7ff";
     units="_"
+    if(data==1){
+      data="Present"
+    }else if(data == 0){
+      data="None"
+    }
 
   }
   else if (type=="pump"){
     parameters="pump";
     color="#F5AA07";
     units="_"
+    if(data==1){
+      data="On"
+    }else if(data == 0){
+      data="Off"
+    }
   }
   else if (type=="temp"){
     parameters="temperature";
