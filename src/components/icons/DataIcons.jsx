@@ -3,7 +3,6 @@ import { faWater } from "@fortawesome/free-solid-svg-icons";
 import { faThermometerHalf } from "@fortawesome/free-solid-svg-icons";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import Icon from "./Icon";
-import { faBottleWater } from "@fortawesome/free-solid-svg-icons";
 
 const DataIcons = ({ type }) => {
   let icon;

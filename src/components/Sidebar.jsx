@@ -23,7 +23,7 @@ function Sidebar() {
     <>
       <Button
         variant="primary"
-        className="text-black"
+        // className="text-black"
         onClick={handleShow}
         style={primaryButton}
       >

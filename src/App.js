@@ -21,6 +21,7 @@ function App() {
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
       setData(data);
+      console.log(data)
     });
   }, []);
 
@@ -34,7 +35,7 @@ function App() {
                 <Sidebar />
               </Col>
             </Row>
-            <DataList/>
+            <DataList data= {data}/>
           </Col>
           <Col md={3} style={right_side}></Col>
         </Row>
