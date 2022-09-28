@@ -4,6 +4,7 @@ import { faThermometerHalf } from "@fortawesome/free-solid-svg-icons";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons"
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 
+
 import Icon from "./Icon";
 
 const DataIcons = ({ type }) => {
