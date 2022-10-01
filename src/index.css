@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-image: url('./bgimage.jpeg');
+    background-image-repeat: none ;
 }
 
 body::-webkit-scrollbar {
@@ -75,4 +76,8 @@ body::-webkit-scrollbar {
 .nav-icons:hover{
     color: #82ca9c;
     cursor: pointer;
+}
+
+.nav-icons{
+    color : #58896b;
 }

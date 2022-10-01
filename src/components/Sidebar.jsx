@@ -30,18 +30,18 @@ function Sidebar() {
 
   return (
     <>
-      <Col xs={1}>
+      <Col xs={2} md={1} className="text-color-primary">
         <h1>
-          < GiHamburgerMenu className="nav-icons" onClick={handleShow}/>
+          <GiHamburgerMenu className="nav-icons" onClick={handleShow}/>
         </h1>
       </Col>
-      <Col xs={1}>
+      <Col xs={2} md={1} className="text-color-primary">
         <h1><TiHome className="nav-icons"/></h1>
       </Col>
-      <Col xs={1}>
+      <Col xs={2} md={1} className="text-color-primary">
         <h1><BsInfoSquareFill className="nav-icons"/></h1>
       </Col>
-      <Col xs={1}>
+      <Col xs={2} md={1} className="text-color-primary">
         <h1><ImStatsDots className="nav-icons"/></h1>
       </Col>
       <Offcanvas show={show} onHide={handleClose} style={{ width: "200px" }}>
