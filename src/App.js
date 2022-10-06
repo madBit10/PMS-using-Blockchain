@@ -25,10 +25,17 @@ function App() {
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
       setData(data);
-      let [,...temp] = humidLog
-      temp.push(data.Humidity)
-      setHumidLog(temp)
+      // let [,...temp] = humidLog
+      // temp.push(data.Humidity)
+      // setHumidLog(temp)
     });
+    // const interval = setInterval(() =>{
+    //   const [,...temp] = humidLog
+    //   temp.push(data.Humidity)
+    //   console.log(data.Humidity)
+    //   setHumidLog(temp)
+    // }, 10000)
+    // return () => clearInterval(interval)
   }, []);
 
   return (
@@ -41,11 +48,11 @@ function App() {
            </Row>
             <Row className="pt-2">
               <DataList data={data} />
-              <h1>{humidLog[0]}</h1>
+              {/* <h1>{humidLog[0]}</h1>
               <h1>{humidLog[1]}</h1>
               <h1>{humidLog[2]}</h1>
               <h1>{humidLog[3]}</h1>
-              <h1>{humidLog[4]}</h1>
+              <h1>{humidLog[4]}</h1> */}
             </Row>
           </Col>
 

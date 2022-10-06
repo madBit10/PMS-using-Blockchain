@@ -33,6 +33,10 @@ const DataCards = ({ type, data }) => {
     color = "#58896b";
     units = "%";
   }
+  useEffect(() => {
+    
+  }, [])
+  
   return (
     <>
       <div className="mt-3 card-shape">
