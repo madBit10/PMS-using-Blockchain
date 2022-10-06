@@ -12,11 +12,12 @@ import PlantDetail from "./components/PlantDetail";
 function App() {
   //Firebase data
   const [data, setData] = useState({});
+  const [humidLog, setHumidLog] = useState([0,0,0,0,0])
 
   //background color style
   const right_side = {
-    backgroundColor: "#fafafa",
-    opacity : "80%"
+    backgroundColor: "rgba(250,250,250,0.6)",
+    height : "100vh"
   };
 
   //read
@@ -24,7 +25,9 @@ function App() {
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
       setData(data);
-      // console.log(data)
+      let [,...temp] = humidLog
+      temp.push(data.Humidity)
+      setHumidLog(temp)
     });
   }, []);
 
@@ -38,6 +41,11 @@ function App() {
            </Row>
             <Row className="pt-2">
               <DataList data={data} />
+              <h1>{humidLog[0]}</h1>
+              <h1>{humidLog[1]}</h1>
+              <h1>{humidLog[2]}</h1>
+              <h1>{humidLog[3]}</h1>
+              <h1>{humidLog[4]}</h1>
             </Row>
           </Col>
 

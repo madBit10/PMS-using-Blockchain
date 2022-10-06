@@ -1,8 +1,9 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url('./bgimage.jpeg');
-    background-image-repeat: none ;
+    background-image: url('../../public/images/bgimage.jpeg');
+    background-repeat: no-repeat ;
+    background-size: cover;
 }
 
 body::-webkit-scrollbar {
