@@ -13,6 +13,14 @@ function App() {
   //Firebase data
   const [data, setData] = useState({});
   // const [humidLog, setHumidLog] = useState([0,0,0,0,0])
+  //Sheets data
+  const [sheets, setSheets] = useState([]);
+  //getSheetsData
+  const getSheetsData = async () =>{
+    const response = await fetch('https://sheet.best/api/sheets/eec0a868-56b9-44ec-bcb5-c20e4057f747')
+    const data = await response.json()
+    return data
+  }
 
   //background color style
   const right_side = {
@@ -22,6 +30,7 @@ function App() {
 
   //read
   useEffect(() => {
+    
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
       setData(data);
@@ -29,6 +38,9 @@ function App() {
       // temp.push(data.Humidity)
       // setHumidLog(temp)
     });
+
+    //get sheets data
+    getSheetsData().then((data) => setSheets(data))
   }, []);
 
   return (
@@ -41,11 +53,7 @@ function App() {
            </Row>
             <Row className="pt-2">
               <DataList data={data} />
-              {/* <h1>{humidLog[0]}</h1>
-              <h1>{humidLog[1]}</h1>
-              <h1>{humidLog[2]}</h1>
-              <h1>{humidLog[3]}</h1>
-              <h1>{humidLog[4]}</h1> */}
+              <p>{}</p>
             </Row>
           </Col>
 
