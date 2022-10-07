@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+
 import DataIcons from "./icons/DataIcons";
 
 const DataCards = ({ type, data }) => {
@@ -33,25 +33,7 @@ const DataCards = ({ type, data }) => {
     color = "#58896b";
     units = "%";
   }
-  // const [humidLog, setHumidLog] = useState([0,0,0,0,0])
-  // // const interval = setInterval(() =>{
-  // //   const [,...temp] = humidLog
-  // //   // console.log(humidLog)
-  // //   temp.push(data)
-  // //   setHumidLog(temp)
-  // // }, 3000)
-  // useEffect(() => {
-  //   // let log = data
-  //   // console.log(data)
-  //   const interval = setInterval(() =>{
-  //     const [,...temp] = humidLog
-  //     // console.log(humidLog)
-  //     temp.push(data)
-  //     setHumidLog(temp)
-  //   }, 3000)
-  //   return () => clearInterval(interval)
-  // }, [])
-  
+
   return (
     <>
       <div className="mt-3 card-shape">

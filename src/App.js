@@ -12,7 +12,7 @@ import PlantDetail from "./components/PlantDetail";
 function App() {
   //Firebase data
   const [data, setData] = useState({});
-  // const [humidLog, setHumidLog] = useState([0,0,0,0,0])
+  const [humidLog, setHumidLog] = useState([0,0,0,0,0])
   //Sheets data
   const [sheets, setSheets] = useState([]);
   //getSheetsData
@@ -30,18 +30,22 @@ function App() {
 
   //read
   useEffect(() => {
-    
     onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
       setData(data);
-      // let [,...temp] = humidLog
-      // temp.push(data.Humidity)
-      // setHumidLog(temp)
     });
-
-    //get sheets data
     getSheetsData().then((data) => setSheets(data))
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() =>{
+      const [,...temp] = humidLog
+      // console.log(humidLog)
+      temp.push(data.Humidity)
+      setHumidLog(temp)
+    }, 3000)
+    return () => clearInterval(interval)
+  },[humidLog])
 
   return (
     <>
@@ -53,7 +57,7 @@ function App() {
            </Row>
             <Row className="pt-2">
               <DataList data={data} />
-              <p>{}</p>
+              <p>{humidLog[0]} {humidLog[1]} {humidLog[2]} {humidLog[3]} {humidLog[4]}</p>
             </Row>
           </Col>
 
