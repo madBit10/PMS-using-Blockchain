@@ -1,4 +1,4 @@
-
+import { useState, useEffect } from "react";
 import DataIcons from "./icons/DataIcons";
 
 const DataCards = ({ type, data }) => {
@@ -6,36 +6,51 @@ const DataCards = ({ type, data }) => {
   let color;
   let units;
 
-  if (type == "water") {
+  if (type === "water") {
     parameters = "Moisture";
     color = "#646e95";
     units = "_";
-    if (data == 1) {
+    if (data === 1) {
       data = "Present";
-    } else if (data == 0) {
+    } else if (data === 0) {
       data = "None";
     }
-  } else if (type == "pump") {
+  } else if (type === "pump") {
     parameters = "pump";
     color = "#F5AA07";
     units = "_";
-    if (data == 1) {
+    if (data === 1) {
       data = "On";
-    } else if (data == 0) {
+    } else if (data === 0) {
       data = "Off";
     }
-  } else if (type == "temp") {
+  } else if (type === "temp") {
     parameters = "temperature";
     color = "#b77f53";
     units = "ºC";
-  } else if (type == "humid") {
+  } else if (type === "humid") {
     parameters = "Humidity";
     color = "#58896b";
     units = "%";
   }
-  useEffect(() => {
-    
-  }, [])
+  // const [humidLog, setHumidLog] = useState([0,0,0,0,0])
+  // // const interval = setInterval(() =>{
+  // //   const [,...temp] = humidLog
+  // //   // console.log(humidLog)
+  // //   temp.push(data)
+  // //   setHumidLog(temp)
+  // // }, 3000)
+  // useEffect(() => {
+  //   // let log = data
+  //   // console.log(data)
+  //   const interval = setInterval(() =>{
+  //     const [,...temp] = humidLog
+  //     // console.log(humidLog)
+  //     temp.push(data)
+  //     setHumidLog(temp)
+  //   }, 3000)
+  //   return () => clearInterval(interval)
+  // }, [])
   
   return (
     <>
@@ -45,9 +60,13 @@ const DataCards = ({ type, data }) => {
           <br />
           <h5 style={{ color: `${color}` }}>{parameters}</h5>
 
-          <br />
+          <br />  
           <h1>{data}</h1>
-
+          {/* <h1>{humidLog[0]}</h1>
+              <h1>{humidLog[1]}</h1>
+              <h1>{humidLog[2]}</h1>
+              <h1>{humidLog[3]}</h1>
+              <h1>{humidLog[4]}</h1> */}
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>

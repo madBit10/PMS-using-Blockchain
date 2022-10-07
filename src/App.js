@@ -12,7 +12,7 @@ import PlantDetail from "./components/PlantDetail";
 function App() {
   //Firebase data
   const [data, setData] = useState({});
-  const [humidLog, setHumidLog] = useState([0,0,0,0,0])
+  // const [humidLog, setHumidLog] = useState([0,0,0,0,0])
 
   //background color style
   const right_side = {
@@ -29,13 +29,6 @@ function App() {
       // temp.push(data.Humidity)
       // setHumidLog(temp)
     });
-    // const interval = setInterval(() =>{
-    //   const [,...temp] = humidLog
-    //   temp.push(data.Humidity)
-    //   console.log(data.Humidity)
-    //   setHumidLog(temp)
-    // }, 10000)
-    // return () => clearInterval(interval)
   }, []);
 
   return (
