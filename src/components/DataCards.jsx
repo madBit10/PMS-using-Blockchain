@@ -1,10 +1,12 @@
 
 import DataIcons from "./icons/DataIcons";
-
+import LiveChart from "../components/LiveChart";
+  
 const DataCards = ({ type, data }) => {
   let parameters;
   let color;
   let units;
+
 
   if (type === "water") {
     parameters = "Moisture";
@@ -52,10 +54,14 @@ const DataCards = ({ type, data }) => {
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
+          
+          <LiveChart data={[90,92,99,100,91]}/>
+
         </div>
       </div>
     </>
   );
+
 };
 
 export default DataCards;

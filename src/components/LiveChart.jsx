@@ -11,6 +11,19 @@ import {
 
 
 function LiveChart({data}) {
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+          return (
+            <div style={{}} className="custom-tooltip">
+              <p  style={{ color:"#F5AA07"}}>{`${payload[0].payload.value}`}</p>
+              </div>
+            
+          );
+        }
+      
+        return null;
+      };
+     
     const data1 = [
         { name: "A", value: data[0] },
         { name: "B", value: data[1] },
@@ -21,9 +34,13 @@ function LiveChart({data}) {
       
   return (
     <>
-     <LineChart
-      width={500}
-      height={300}
+    <LineChart width={200} height={50} data={data1}>
+    <Tooltip  wrapperStyle={{}} content={<CustomTooltip/>} />     
+     <Line type="monotone" dataKey="value" stroke="#F5AA07" strokeWidth={1} />
+    </LineChart>
+     {/* <LineChart 
+      width={200}
+      height={200}
       data={data1}
       margin={{
         top: 5,
@@ -32,19 +49,18 @@ function LiveChart({data}) {
         bottom: 5
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend /> 
-      <Line
+      {/* <CartesianGrid strokeDasharray="3 3" /> */}
+      {/* <XAxis dataKey="name" />
+      <YAxis /> */}
+      {/* <Tooltip /> */}
+      {/* <Legend />  */}
+      {/* <Line
         type="monotone"
         dataKey="value"
         stroke="#8884d8"
-        activeDot={{ r: 8 }}
-      />
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-    // </LineChart>
+        activeDot={{ r: 8}}
+        style={{color:"black"}}/>
+ </LineChart>  */}
     </>
   );
 }
