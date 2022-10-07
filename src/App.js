@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import DataList from "./components/DataList";
+import LiveChart from "./components/LiveChart";
 
 import PlantDetail from "./components/PlantDetail";
 
@@ -35,7 +36,7 @@ function App() {
       setData(data);
     });
     getSheetsData().then((data) => setSheets(data))
-  }, []);
+    }, []);
 
   useEffect(() => {
     const interval = setInterval(() =>{
@@ -57,7 +58,9 @@ function App() {
            </Row>
             <Row className="pt-2">
               <DataList data={data} />
-              <p>{humidLog[0]} {humidLog[1]} {humidLog[2]} {humidLog[3]} {humidLog[4]}</p>
+              <p>{humidLog[0]} {humidLog[1]} {humidLog[2]} {humidLog[3]} {humidLog[4]}</p>  
+                <LiveChart data={humidLog}/>
+
             </Row>
           </Col>
 
@@ -66,7 +69,8 @@ function App() {
           </Col>
 
         </Row>
-      </Container>
+      </Container> 
+
     </>
   );
 }
