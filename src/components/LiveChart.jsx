@@ -9,21 +9,22 @@ import {
   Legend
 } from "recharts";
 
-const data = [
-  { name: "A", value: 11 },
-  { name: "B", value: 11 },
-  { name: "C", value: 22 },
-  { name: "D", value: 33 },
-  { name: "E", value: 30 },
-];
 
-export default function App() {
+function LiveChart({data}) {
+    const data1 = [
+        { name: "A", value: data[0] },
+        { name: "B", value: data[1] },
+        { name: "C", value: data[2] },
+        { name: "D", value: data[3] },
+        { name: "E", value: data[4] },
+      ];
+      
   return (
     <>
      <LineChart
       width={500}
       height={300}
-      data={data}
+      data={data1}
       margin={{
         top: 5,
         right: 30,
@@ -47,3 +48,4 @@ export default function App() {
     </>
   );
 }
+export default LiveChart;

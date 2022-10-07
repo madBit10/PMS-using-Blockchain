@@ -42,7 +42,7 @@ function App() {
     const interval = setInterval(() =>{
       const [,...temp] = humidLog
       // console.log(humidLog)
-      temp.push(data.Humidity)
+      temp.push(data.Humidity===undefined?0:data.Humidity)
       setHumidLog(temp)
     }, 3000)
     return () => clearInterval(interval)
