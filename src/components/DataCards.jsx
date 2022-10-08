@@ -70,7 +70,7 @@ const DataCards = ({ type, data }) => {
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
-          <LiveChart data={chartData} color={color}/>
+          {(type === "pump") ? '': <LiveChart data={chartData} color={color}/>}
         </div>
       </div>
     </>
