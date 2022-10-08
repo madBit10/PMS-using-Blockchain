@@ -13,10 +13,6 @@ const DataCards = ({ type, data }) => {
     return () => clearInterval(interval);
   }, [chartData]);
 
-  useEffect(() => {
-    if(type === "water"){}
-  }, []);
-
 
   let parameters;
   let color;
