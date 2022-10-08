@@ -19,8 +19,7 @@ function App() {
   //getSheetsData
   const getSheetsData = async () => {
     const response = await fetch(
-      "https://sheet.best/api/sheets/eec0a868-56b9-44ec-bcb5-c20e4057f747"
-    );
+"https://script.google.com/macros/s/AKfycbzgE-vq7a7qQ-mCbD4NJVejdpCjHeF-_qiqdYSFD4uQ7c1CwuFpTfzbNMWr-Wh2zkvuTg/exec"    );
     const data = await response.json();
     return data;
   };
