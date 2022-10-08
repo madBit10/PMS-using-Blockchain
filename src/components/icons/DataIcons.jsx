@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWater } from "@fortawesome/free-solid-svg-icons";
 import { faThermometerHalf } from "@fortawesome/free-solid-svg-icons";
-import { faDroplet } from "@fortawesome/free-solid-svg-icons"
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
-
 
 import Icon from "./Icon";
 
@@ -30,7 +29,6 @@ const DataIcons = ({ type }) => {
     icon = faSeedling;
     color = "#58896b";
     bgColor = "#c1f0d1";
-
   }
   if (type == "pump") {
     return (

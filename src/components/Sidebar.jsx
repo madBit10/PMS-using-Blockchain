@@ -9,7 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { TiHome } from "react-icons/ti";
 import { BsInfoSquareFill } from "react-icons/bs";
 import { ImStatsDots } from "react-icons/im";
-import { hover } from "@testing-library/user-event/dist/hover";
+
 
 function Sidebar() {
   //offcanvas states
@@ -18,31 +18,32 @@ function Sidebar() {
   const handleShow = () => setShow(true);
 
   //Style variables
-  const primaryButton = {
-    backgroundColor: "#6eb0b2",
-    // width: "300px",
-  };
+  
   const background = {
     backgroundColor: "rgba(244,248,249,255)",
   };
-  
-
 
   return (
     <>
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
-          <GiHamburgerMenu className="nav-icons" onClick={handleShow}/>
+          <GiHamburgerMenu className="nav-icons" onClick={handleShow} />
         </h1>
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
-        <h1><TiHome className="nav-icons"/></h1>
+        <h1>
+          <TiHome className="nav-icons" />
+        </h1>
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
-        <h1><BsInfoSquareFill className="nav-icons"/></h1>
+        <h1>
+          <BsInfoSquareFill className="nav-icons" />
+        </h1>
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
-        <h1><ImStatsDots className="nav-icons"/></h1>
+        <h1>
+          <ImStatsDots className="nav-icons" />
+        </h1>
       </Col>
       <Offcanvas show={show} onHide={handleClose} style={{ width: "200px" }}>
         <Offcanvas.Header closeButton style={background}>

@@ -1,12 +1,26 @@
-
 import DataIcons from "./icons/DataIcons";
 import LiveChart from "../components/LiveChart";
-  
+import { useState, useEffect } from "react";
 const DataCards = ({ type, data }) => {
+  const [chartData, setChartData] = useState([0, 0, 0, 0, 0]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const [, ...temp] = chartData;
+      temp.push(data === undefined ? 0 : data);
+      setChartData(temp);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [chartData]);
+
+  useEffect(() => {
+    if(type === "water"){}
+  }, []);
+
+
   let parameters;
   let color;
   let units;
-
 
   if (type === "water") {
     parameters = "Moisture";
@@ -36,6 +50,8 @@ const DataCards = ({ type, data }) => {
     units = "%";
   }
 
+
+
   return (
     <>
       <div className="mt-3 card-shape">
@@ -44,7 +60,7 @@ const DataCards = ({ type, data }) => {
           <br />
           <h5 style={{ color: `${color}` }}>{parameters}</h5>
 
-          <br />  
+          <br />
           <h1>{data}</h1>
           {/* <h1>{humidLog[0]}</h1>
               <h1>{humidLog[1]}</h1>
@@ -54,14 +70,11 @@ const DataCards = ({ type, data }) => {
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
-          
-          <LiveChart data={[90,92,99,100,91]}/>
-
+          <LiveChart data={chartData} color={color}/>
         </div>
       </div>
     </>
   );
-
 };
 
 export default DataCards;

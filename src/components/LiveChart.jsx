@@ -6,39 +6,42 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
 } from "recharts";
 
+function LiveChart({ data, color }) {
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div style={{}} className="custom-tooltip">
+          <p style={{ color: `${color}` }}>{`${payload[0].payload.value}`}</p>
+        </div>
+      );
+    }
 
-function LiveChart({data}) {
-    const CustomTooltip = ({ active, payload, label }) => {
-        if (active && payload && payload.length) {
-          return (
-            <div style={{}} className="custom-tooltip">
-              <p  style={{ color:"#F5AA07"}}>{`${payload[0].payload.value}`}</p>
-              </div>
-            
-          );
-        }
-      
-        return null;
-      };
-     
-    const data1 = [
-        { name: "A", value: data[0] },
-        { name: "B", value: data[1] },
-        { name: "C", value: data[2] },
-        { name: "D", value: data[3] },
-        { name: "E", value: data[4] },
-      ];
-      
+    return null;
+  };
+
+  const data1 = [
+    { name: "A", value: data[0] },
+    { name: "B", value: data[1] },
+    { name: "C", value: data[2] },
+    { name: "D", value: data[3] },
+    { name: "E", value: data[4] },
+  ];
+
   return (
     <>
-    <LineChart width={200} height={50} data={data1}>
-    <Tooltip  wrapperStyle={{}} content={<CustomTooltip/>} />     
-     <Line type="monotone" dataKey="value" stroke="#F5AA07" strokeWidth={1} />
-    </LineChart>
-     {/* <LineChart 
+      <LineChart width={200} height={50} data={data1}>
+        <Tooltip wrapperStyle={{}} content={<CustomTooltip />} />
+        <Line
+          type="monotone"
+          dataKey="value"
+          stroke = {color}
+          strokeWidth={1}
+        />
+      </LineChart>
+      {/* <LineChart 
       width={200}
       height={200}
       data={data1}

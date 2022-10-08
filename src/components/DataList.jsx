@@ -19,7 +19,7 @@ const DataList = ({ data }) => {
           <DataCards type="humid" data={data.Humidity} />
         </Col>
         <Col sm={4}>
-          <DataCards type="pump"data={data.Pump} />
+          <DataCards type="pump" data={data.Pump} />
         </Col>
       </Row>
     </>
