@@ -9,6 +9,7 @@ import DataList from "./components/DataList";
 import LiveChart from "./components/LiveChart";
 
 import PlantDetail from "./components/PlantDetail";
+import Stats from "./components/Stats";
 
 function App() {
   //Firebase data
@@ -58,12 +59,14 @@ function App() {
               <Sidebar />
             </Row>
             <Row className="pt-2">
-              <DataList data={data} />
-              <p>
+              {/* <DataList data={data} /> */}
+              {/* <p>
                 {humidLog[0]} {humidLog[1]} {humidLog[2]} {humidLog[3]}{" "}
                 {humidLog[4]}
-              </p>
-              <LiveChart data={humidLog} />
+              </p> */}
+              {/* <LiveChart data={humidLog} /> */}
+              <Stats data={sheets} />
+
             </Row>
           </Col>
 
