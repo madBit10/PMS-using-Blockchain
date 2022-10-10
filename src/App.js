@@ -20,7 +20,7 @@ function App() {
   //getSheetsData
   const getSheetsData = async () => {
     const response = await fetch(
-"https://script.google.com/macros/s/AKfycbzgE-vq7a7qQ-mCbD4NJVejdpCjHeF-_qiqdYSFD4uQ7c1CwuFpTfzbNMWr-Wh2zkvuTg/exec"    );
+"https://script.google.com/macros/s/AKfycbxtvquCSjbV9t4IrrOZo-yRrYMpB_1QH4q4lk1sCeRE81LwYuCdrcsWVjohDWRLE1Qoyg/exec"    );
     const data = await response.json();
     return data;
   };

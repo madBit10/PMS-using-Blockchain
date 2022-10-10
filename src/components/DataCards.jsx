@@ -1,6 +1,7 @@
 import DataIcons from "./icons/DataIcons";
 import LiveChart from "../components/LiveChart";
 import { useState, useEffect } from "react";
+import PumpSwitch from "./PumpSwitch";
 const DataCards = ({ type, data }) => {
   const [chartData, setChartData] = useState([0, 0, 0, 0, 0]);
 
@@ -30,7 +31,7 @@ const DataCards = ({ type, data }) => {
   } else if (type === "pump") {
     parameters = "pump";
     color = "#F5AA07";
-    units = "_";
+    units = "";
     if (data === 1) {
       data = "On";
     } else if (data === 0) {
@@ -66,7 +67,7 @@ const DataCards = ({ type, data }) => {
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
-          {(type === "pump") ? '': <LiveChart data={chartData} color={color}/>}
+          {(type === "pump") ?<PumpSwitch/> : <LiveChart data={chartData} color={color}/>}
         </div>
       </div>
     </>
