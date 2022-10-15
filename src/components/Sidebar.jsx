@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -32,7 +33,9 @@ function Sidebar() {
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
-          <TiHome className="nav-icons" />
+          <NavLink to='/'>
+            <TiHome className="nav-icons" />
+          </NavLink>
         </h1>
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
@@ -42,7 +45,9 @@ function Sidebar() {
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
-          <ImStatsDots className="nav-icons" />
+          <NavLink to='/stats'>
+            <ImStatsDots className="nav-icons" />
+          </NavLink>
         </h1>
       </Col>
       <Offcanvas show={show} onHide={handleClose} style={{ width: "200px" }}>
