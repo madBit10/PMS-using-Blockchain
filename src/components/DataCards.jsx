@@ -59,15 +59,10 @@ const DataCards = ({ type, data }) => {
 
           <br />
           <h1>{data}</h1>
-          {/* <h1>{humidLog[0]}</h1>
-              <h1>{humidLog[1]}</h1>
-              <h1>{humidLog[2]}</h1>
-              <h1>{humidLog[3]}</h1>
-              <h1>{humidLog[4]}</h1> */}
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
-          {(type === "pump") ?<PumpSwitch/> : <LiveChart data={chartData} color={color}/>}
+          <LiveChart data={chartData} color={color}/>
         </div>
       </div>
     </>

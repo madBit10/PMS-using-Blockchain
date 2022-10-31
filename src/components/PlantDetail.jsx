@@ -1,9 +1,22 @@
 import React from "react";
+import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
 import DataIcons from "./icons/DataIcons";
 import Icon from "./icons/Icon";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 function PlantDetail() {
+  const [showCam, setShowCam] = useState(false);
+  
+  function handleCam() {
+    if(showCam === false){
+      setShowCam(true)
+    }
+    if(showCam === true){
+      setShowCam(false)
+    }
+  }
+
   return (
     <>
       <Row className="pt-5"></Row>
@@ -15,8 +28,12 @@ function PlantDetail() {
         <hr className="line" />
       </Row>
       <Row className="d-flex justify-content-center">
-        <Icon icon_name="plant.png" h="200px" w="200px" />
+        {showCam == true ? (<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDWD4OpJtyDxAQ0InyuTnH9MjgbtdvUz-VkQrd7JY&s'style={{
+          height: `200px`,
+          width: `200px`,
+        }}/>):(<Icon icon_name="plant.png" h="200px" w="200px" />)}
       </Row>
+      <center><Button onClick={handleCam} variant="primary">Primary</Button>{' '}</center>
       <Row className="box-row">
         <Col md={1}></Col>
         <Col md={5} className="fluid card-bg-1">

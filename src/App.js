@@ -1,14 +1,14 @@
-import { db } from "./firebase";
-import { ref, onValue } from "firebase/database";
-import { useState, useEffect } from "react";
-import Sidebar from "./components/Sidebar";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import DataList from "./components/DataList";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import PlantDetail from "./components/PlantDetail";
-import Stats from "./components/Stats";
+import { db } from './firebase';
+import { ref, onValue } from 'firebase/database';
+import { useState, useEffect } from 'react';
+import Sidebar from './components/Sidebar';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import DataList from './components/DataList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PlantDetail from './components/PlantDetail';
+import Stats from './components/Stats';
 
 function App() {
   //Firebase data
@@ -18,7 +18,7 @@ function App() {
   //getSheetsData
   const getSheetsData = async () => {
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbxtvquCSjbV9t4IrrOZo-yRrYMpB_1QH4q4lk1sCeRE81LwYuCdrcsWVjohDWRLE1Qoyg/exec"
+      'https://script.google.com/macros/s/AKfycbxtvquCSjbV9t4IrrOZo-yRrYMpB_1QH4q4lk1sCeRE81LwYuCdrcsWVjohDWRLE1Qoyg/exec'
     );
     const data = await response.json();
     return data;
@@ -26,8 +26,8 @@ function App() {
 
   //background color style
   const right_side = {
-    backgroundColor: "rgba(250,250,250,0.6)",
-    height: "100vh",
+    backgroundColor: 'rgba(250,250,250,0.6)',
+    height: '100vh',
   };
 
   //read
@@ -49,8 +49,8 @@ function App() {
             </Row>
             <Row className="pt-2">
               <Routes>
-                <Route exact path='/' element={<DataList data={data} />}/>
-                <Route exact path='/stats' element={<Stats data={sheets} />}/>
+                <Route exact path="/" element={<DataList data={data} />} />
+                <Route exact path="/stats" element={<Stats data={sheets} />} />
               </Routes>
             </Row>
           </Col>

@@ -33,7 +33,7 @@ function Sidebar() {
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
-          <NavLink to='/'>
+          <NavLink  active='active-link' to='/'>
             <TiHome className="nav-icons" />
           </NavLink>
         </h1>
