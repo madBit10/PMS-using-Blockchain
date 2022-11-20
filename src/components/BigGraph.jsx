@@ -2,8 +2,8 @@ import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area } from 'recharts';
 
 function BigGraph({data}) {
-  // console.log(data)
-  return (
+console.log(data)
+return (
 <LineChart
       width={800}
       height={500}
@@ -22,11 +22,11 @@ function BigGraph({data}) {
       <Legend />
       <Line
         type="monotone"
-        dataKey="Temperature"
+        dataKey="temperature"
         stroke="#8884d8"
         activeDot={{ r: 8 }}
       />
-      <Line type="monotone" dataKey="Humidity" stroke="#82ca9d" />
+      <Line type="monotone" dataKey="humidity" stroke="#82ca9d" />
     </LineChart>
     )
 }

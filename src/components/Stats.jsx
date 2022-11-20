@@ -4,17 +4,17 @@ import BigGraph from "./BigGraph";
 import TabularForm from "./TabularForm";
 
 function Stats({ data }) {
-  // console.log(data.data)
 
   return (
     <>
       <Col ></Col>
       <Col >
       <Row >
-        <BigGraph data={data.data} /></Row>
+        <BigGraph data={data} /></Row>
         
         <Row>
-        <TabularForm  data={data.data}/></Row>
+        <TabularForm  data={data}/>
+        </Row>
       </Col>
       <Col></Col>
     </>

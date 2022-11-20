@@ -20,9 +20,9 @@ function TabularForm({ data }) {
             data.map((data, index) => (
               <tr data-index={index}>
                 <td>{index + 1}</td>
-                <td>{data.Date.substr(11, 5)}</td>
-                <td>{data.Humidity}</td>
-                <td>{data.Temperature}</td>
+                <td>{data.timeofdata.substr(11, 5)}</td>
+                <td>{data.humidity}</td>
+                <td>{data.temperature}</td>
               </tr>
             ))
           ) : (
