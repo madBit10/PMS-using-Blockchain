@@ -50,7 +50,7 @@ function PlantDetail({ photo }) {
           width: `auto`,
         }}/>):(<Icon icon_name="plant.png" h="200px" w="200px" />)}
       </Row>
-      <center><Button onClick={handleCam} variant="primary">Primary</Button>{' '}</center>
+      <center><Button className="mt-2 mb-2 p-butt" onClick={handleCam} >{showCam == true ? 'Plant' : 'Camera'}</Button>{' '}</center>
       <Row className="box-row">
         <Col md={1}></Col>
         <Col md={5} className="fluid card-bg-1">

@@ -9,6 +9,7 @@ import DataList from './components/DataList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlantDetail from './components/PlantDetail';
 import Stats from './components/Stats';
+import AboutUs from './components/AboutUs';
 
 function App() {
   //Firebase data
@@ -53,6 +54,7 @@ function App() {
               <Routes>
                 <Route exact path="/" element={<DataList data={data} />} />
                 <Route exact path="/stats" element={<Stats data={sheets} />} />
+                <Route exact path="/aboutus" element={<AboutUs/>} />
               </Routes>
             </Row>
           </Col>

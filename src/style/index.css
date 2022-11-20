@@ -86,3 +86,20 @@ body::-webkit-scrollbar {
 .active-link{
     color:red;
 }
+.card-ab{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #bcc8e5;
+    background-color: #e0f9e2;
+    color: #58896b;
+}
+
+.p-butt{
+    background-color: #58896b;
+    color: #e0f9e2;
+}
+
+.p-butt:hover{
+    background-color: #e0f9e2;
+    color: #58896b;
+}

@@ -33,14 +33,16 @@ function Sidebar() {
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
-          <NavLink  active='active-link' to='/'>
+          <NavLink  activeClassName='active-link' to='/'>
             <TiHome className="nav-icons" />
           </NavLink>
         </h1>
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
+          <NavLink to='/aboutus'>
           <BsInfoSquareFill className="nav-icons" />
+          </NavLink>
         </h1>
       </Col>
       <Col xs={2} md={1} className="text-color-primary">
@@ -58,9 +60,15 @@ function Sidebar() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav defaultActiveKey="/home" className="flex-column">
+          <NavLink  activeClassName='active-link' to='/'>
             <Nav.Link className="link">Home</Nav.Link>
+          </NavLink>
+          <NavLink  activeClassName='active-link' to='/aboutus'>
             <Nav.Link className="link">About</Nav.Link>
+          </NavLink>
+          <NavLink  activeClassName='active-link' to='/stats'>
             <Nav.Link className="link">Stats</Nav.Link>
+          </NavLink>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
