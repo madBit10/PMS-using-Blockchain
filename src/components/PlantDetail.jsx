@@ -1,12 +1,29 @@
 import React from "react";
+import { storage } from '../firebase';
+import { ref as refer, getDownloadURL, connectStorageEmulator } from "firebase/storage";
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import DataIcons from "./icons/DataIcons";
 import Icon from "./icons/Icon";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-function PlantDetail() {
+function PlantDetail({ photo }) {
   const [showCam, setShowCam] = useState(false);
+  const [photoUrl, setPhotoUrl] = useState('')
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+    getDownloadURL(refer(storage, 'data/photo.jpg'))
+    .then((url) => {
+      console.log(url)
+      setPhotoUrl(url)
+    })
+    .catch((error) => {
+      // Handle any errors
+    });
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [photoUrl]);
   
   function handleCam() {
     if(showCam === false){
@@ -28,9 +45,9 @@ function PlantDetail() {
         <hr className="line" />
       </Row>
       <Row className="d-flex justify-content-center">
-        {showCam == true ? (<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDWD4OpJtyDxAQ0InyuTnH9MjgbtdvUz-VkQrd7JY&s'style={{
+        {showCam == true ? (<img src={photoUrl} style={{
           height: `200px`,
-          width: `200px`,
+          width: `auto`,
         }}/>):(<Icon icon_name="plant.png" h="200px" w="200px" />)}
       </Row>
       <center><Button onClick={handleCam} variant="primary">Primary</Button>{' '}</center>

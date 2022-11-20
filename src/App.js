@@ -13,6 +13,7 @@ import Stats from './components/Stats';
 function App() {
   //Firebase data
   const [data, setData] = useState({});
+  
   //Sheets data
   const [sheets, setSheets] = useState([]);
   //getSheetsData
@@ -37,6 +38,7 @@ function App() {
       setData(data);
     });
     getSheetsData().then((data) => setSheets(data));
+    
   }, []);
 
   return (
@@ -56,7 +58,7 @@ function App() {
           </Col>
 
           <Col sm={3} style={right_side}>
-            <PlantDetail />
+            <PlantDetail/>
           </Col>
         </Row>
       </Container>
