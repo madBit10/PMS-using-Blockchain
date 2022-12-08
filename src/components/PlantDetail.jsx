@@ -1,6 +1,6 @@
 import React from "react";
 import { storage } from '../firebase';
-import { ref as refer, getDownloadURL, connectStorageEmulator } from "firebase/storage";
+import { ref as refer, getDownloadURL } from "firebase/storage";
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import DataIcons from "./icons/DataIcons";

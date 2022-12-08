@@ -15,7 +15,7 @@ const AboutUs = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, ab? Fugit, dolorum cupiditate accusantium iure quas modi vitae consectetur necessitatibus ex facilis optio. Enim perferendis tempore deleniti quae temporibus iste.
         </Card.Text>
         <center>
-        <a href="/https://github.com/sanjayjogi/Plant-Monitoring-System" style={{color : '#e0f9e2'}}>
+        <a href="https://github.com/sanjayjogi/Plant-Monitoring-System" target="_blank" style={{color : '#e0f9e2'}}>
         <Button className='p-butt mr-1 ml-1' variant="primary">Front End</Button>{' '}
         </a>
         <Button className='p-butt mr-1 ml-1' variant="primary">Servers</Button>{' '}

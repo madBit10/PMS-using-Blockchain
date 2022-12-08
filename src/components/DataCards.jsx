@@ -22,7 +22,7 @@ const DataCards = ({ type, data }) => {
   if (type === "water") {
     parameters = "Moisture";
     color = "#646e95";
-    units = "_";
+    units = "%";
     if (data === 1) {
       data = "Present";
     } else if (data === 0) {
