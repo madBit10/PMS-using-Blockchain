@@ -51,7 +51,7 @@ const DataCards = ({ type, data }) => {
 
   return (
     <>
-      <div className="mt-3 card-shape">
+      <div className="mt-3 card-shape scale-up-center">
         <div className="p-3">
           <DataIcons type={`${type}`} />
           <br />
