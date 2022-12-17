@@ -8,7 +8,7 @@ function Stats({ data }) {
   return (
     <>
       <Col ></Col>
-      <Col >
+      <Col className="scale-up-center" >
       <Row >
         <BigGraph data={data} /></Row>
         
