@@ -170,7 +170,7 @@ body::-webkit-scrollbar {
     color: #e0f9e2;
 }
 
-.p-butt:hover{
-    background-color: #e0f9e2;
-    color: #58896b;
+.p-butt:hover{  
+    background-color: #d5f8d8  !important;
+    color: #58896b !important;
 }
