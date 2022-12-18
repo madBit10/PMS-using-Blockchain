@@ -1,6 +1,7 @@
 import DataIcons from "./icons/DataIcons";
 import LiveChart from "../components/LiveChart";
 import { useState, useEffect } from "react";
+import Form from 'react-bootstrap/Form';
 import PumpSwitch from "./PumpSwitch";
 const DataCards = ({ type, data }) => {
   const [chartData, setChartData] = useState([0, 0, 0, 0, 0]);
@@ -62,7 +63,11 @@ const DataCards = ({ type, data }) => {
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
-          <LiveChart data={chartData} color={color}/>
+          { type === 'pump' ? (<Form.Check 
+        type="switch"
+        id="custom-switch"
+        checked="true"
+      />) : (<LiveChart data={chartData} color={color}/>)}
         </div>
       </div>
     </>

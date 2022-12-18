@@ -1,10 +1,11 @@
 import { db } from './firebase';
-import { ref, onValue } from 'firebase/database';
+import { ref, onValue, set } from 'firebase/database';
 import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import DataList from './components/DataList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlantDetail from './components/PlantDetail';
@@ -25,6 +26,10 @@ function App() {
     const data = await response.json();
     return data;
   };
+
+  const changePump = async () => {
+    await set(ref(db, 'Pump/'), 1)
+  }
 
   //background color style
   const right_side = {
@@ -56,6 +61,7 @@ function App() {
                 <Route exact path="/stats" element={<Stats data={sheets} />} />
                 <Route exact path="/aboutus" element={<AboutUs/>} />
               </Routes>
+              <Button variant="primary" onClick={changePump} >Primary</Button>{' '}
             </Row>
           </Col>
 
