@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlantDetail from './components/PlantDetail';
 import Stats from './components/Stats';
 import AboutUs from './components/AboutUs';
+import { Detection } from './components/Detection';
 
 function App() {
   //Firebase data
@@ -60,8 +61,9 @@ function App() {
                 <Route exact path="/" element={<DataList data={data} />} />
                 <Route exact path="/stats" element={<Stats data={sheets} />} />
                 <Route exact path="/aboutus" element={<AboutUs/>} />
+                <Route exact path="/detection" element={<Detection/>} />
               </Routes>
-              <Button variant="primary" onClick={changePump} >Primary</Button>{' '}
+              {/* <Button variant="primary" onClick={changePump} >Primary</Button>{' '} */}
             </Row>
           </Col>
 
