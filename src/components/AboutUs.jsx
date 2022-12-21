@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Icon from "./icons/Icon";
 const AboutUs = () => {
   return (
-    <Card className='mx-auto mt-6 card-ab' style={{ width: '80%' }}>
+    <Card className='mx-auto mt-6 card-ab scale-up-center' style={{ width: '80%' }}>
         <center>
         <br></br>
         <Icon icon_name="group.jpeg" h="342px" w="256px" className="mx-auto" />

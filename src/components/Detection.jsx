@@ -1,12 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import Icon from "./icons/Icon";
 import { useState } from "react";
 import Row from "react-bootstrap/Row";
-import { useEffect } from "react";
 import { PlantIdCard } from "./PlantIdCard";
-import Modal from 'react-bootstrap/Modal';
 import { HealthCard } from "./HealthCard";
 
 export const Detection = () => {
@@ -153,7 +150,7 @@ const handleIdShow = () => {
 
   return (
     <>
-      <Card className="mx-auto mt-6 card-ab" style={{ width: "80%" }}>
+      <Card className="mx-auto mt-6 card-ab scale-up-center" style={{ width: "80%" }}>
         <center>
           <br></br>
           <div

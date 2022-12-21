@@ -1,8 +1,6 @@
 import DataIcons from "./icons/DataIcons";
 import LiveChart from "../components/LiveChart";
 import { useState, useEffect } from "react";
-import Form from 'react-bootstrap/Form';
-import PumpSwitch from "./PumpSwitch";
 import { Button } from "react-bootstrap";
 const DataCards = ({ type, data, changePump, userPump }) => {
   const [chartData, setChartData] = useState([0, 0, 0, 0, 0]);

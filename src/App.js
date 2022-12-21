@@ -5,7 +5,6 @@ import Sidebar from './components/Sidebar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import DataList from './components/DataList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PlantDetail from './components/PlantDetail';
