@@ -70,6 +70,8 @@ function App() {
               </Routes>
 <<<<<<< Updated upstream
               {/* <Button variant="primary" onClick={changePump} >Primary</Button>{' '} */}
+=======
+>>>>>>> Stashed changes
             </Row>
           </Col>
 
