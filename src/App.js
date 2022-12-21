@@ -68,10 +68,6 @@ function App() {
                 <Route exact path="/aboutus" element={<AboutUs/>} />
                 <Route exact path="/detection" element={<Detection/>} />
               </Routes>
-<<<<<<< Updated upstream
-              {/* <Button variant="primary" onClick={changePump} >Primary</Button>{' '} */}
-=======
->>>>>>> Stashed changes
             </Row>
           </Col>
 
