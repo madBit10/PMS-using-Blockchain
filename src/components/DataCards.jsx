@@ -3,7 +3,8 @@ import LiveChart from "../components/LiveChart";
 import { useState, useEffect } from "react";
 import Form from 'react-bootstrap/Form';
 import PumpSwitch from "./PumpSwitch";
-const DataCards = ({ type, data }) => {
+import { Button } from "react-bootstrap";
+const DataCards = ({ type, data, changePump, userPump }) => {
   const [chartData, setChartData] = useState([0, 0, 0, 0, 0]);
 
   useEffect(() => {
@@ -15,6 +16,9 @@ const DataCards = ({ type, data }) => {
     return () => clearInterval(interval);
   }, [chartData]);
 
+  const handleChange = (e) => {
+    changePump()
+  }
 
   let parameters;
   let color;
@@ -63,11 +67,7 @@ const DataCards = ({ type, data }) => {
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
-          { type === 'pump' ? (<Form.Check 
-        type="switch"
-        id="custom-switch"
-        checked="true"
-      />) : (<LiveChart data={chartData} color={color}/>)}
+          { type === 'pump' ? (<Button className="mt-2 mb-2 p-butt" onClick={handleChange} >{userPump === 0 ? 'Off' : 'On'}</Button>) : (<LiveChart data={chartData} color={color}/>)}
         </div>
       </div>
     </>

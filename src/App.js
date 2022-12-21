@@ -29,7 +29,12 @@ function App() {
   };
 
   const changePump = async () => {
-    await set(ref(db, 'Pump/'), 1)
+    if(data.UserPump === 0){
+      await set(ref(db, 'UserPump/'), 1)
+    }
+    else{
+      await set(ref(db, 'UserPump/'), 0)
+    }
   }
 
   //background color style
@@ -58,11 +63,12 @@ function App() {
             </Row>
             <Row className="pt-2">
               <Routes>
-                <Route exact path="/" element={<DataList data={data} />} />
+                <Route exact path="/" element={<DataList data={data} changePump={changePump} />} />
                 <Route exact path="/stats" element={<Stats data={sheets} />} />
                 <Route exact path="/aboutus" element={<AboutUs/>} />
                 <Route exact path="/detection" element={<Detection/>} />
               </Routes>
+<<<<<<< Updated upstream
               {/* <Button variant="primary" onClick={changePump} >Primary</Button>{' '} */}
             </Row>
           </Col>

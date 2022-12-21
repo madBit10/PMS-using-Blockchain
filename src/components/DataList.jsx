@@ -1,7 +1,7 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import DataCards from "./DataCards";
-const DataList = ({ data }) => {
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import DataCards from './DataCards';
+const DataList = ({ data, changePump }) => {
   return (
     <>
       <Row className="justify-content-center">
@@ -19,7 +19,12 @@ const DataList = ({ data }) => {
           <DataCards type="humid" data={data.Humidity} />
         </Col>
         <Col sm={4}>
-          <DataCards type="pump" data={data.Pump} />
+          <DataCards
+            type="pump"
+            data={data.Pump}
+            changePump={changePump}
+            userPump={data.UserPump}
+          />
         </Col>
       </Row>
     </>

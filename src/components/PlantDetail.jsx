@@ -15,7 +15,6 @@ function PlantDetail({ photo }) {
     const interval = setInterval(() => {
     getDownloadURL(refer(storage, 'data/photo.jpg'))
     .then((url) => {
-      console.log(url)
       setPhotoUrl(url)
     })
     .catch((error) => {
