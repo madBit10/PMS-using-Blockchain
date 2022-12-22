@@ -10,27 +10,27 @@ const DataIcons = ({ type }) => {
   let icon;
   let color;
   let bgColor;
-  if (type == "water") {
+  if (type === "water") {
     icon = faDroplet;
     color = "#646e95";
     bgColor = "#cbd7ff";
   }
-  if (type == "temp") {
+  if (type === "temp") {
     icon = faThermometerHalf;
     color = "#b77f53";
     bgColor = "#f3c097";
   }
-  if (type == "humid") {
+  if (type === "humid") {
     icon = faWater;
     color = "#58896b";
     bgColor = "#c1f0d1";
   }
-  if (type == "plant") {
+  if (type === "plant") {
     icon = faSeedling;
     color = "#58896b";
     bgColor = "#c1f0d1";
   }
-  if (type == "pump") {
+  if (type === "pump") {
     return (
       <>
         <div className="box">

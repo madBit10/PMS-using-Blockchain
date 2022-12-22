@@ -21,12 +21,12 @@ export const PlantIdCard = (props) => {
     centered
     
   >
-    <Modal.Header closeButton>
+    <Modal.Header closeButton className='card-ab '>
       <Modal.Title id="contained-modal-title-vcenter">
       {(props.data.is_plant)?"It is plant!  with accuracy "+props.data.is_plant_probability.toString().slice(2,4)+"%":"It isn't a plant!"}
       </Modal.Title>
     </Modal.Header>
-    <Modal.Body>{(props.data.is_plant)?
+    <Modal.Body className='card-ab '>{(props.data.is_plant)?
       (<><Row>{"We have 3 suggestions for the following image (ordered in terms of probability)."}</Row>
       <Row>{"1)"+props.data.suggestions[0].plant_name+"(Also commonly known as "+props.data.suggestions[0].plant_details.common_names[0]+")"}</Row>
       <Row>{"2)"+props.data.suggestions[1].plant_name+"(Also commonly known as "+props.data.suggestions[1].plant_details.common_names[0]+")"}</Row>

@@ -21,7 +21,8 @@ function App() {
   //getSheetsData
   const getSheetsData = async () => {
     const response = await fetch(
-      'http://localhost:8081/api/getDetails'
+      // 'http://localhost:8081/api/getDetails'
+        "https://script.googleusercontent.com/a/macros/somaiya.edu/echo?user_content_key=-qgicEEHhSuUqG13H7qxzLZ5w7mSPjTwbvirAto1FNmVsVyRMFZKiDWZiN0Ff9m7GZUIDAXqpC4KcW1adcoMM-3ZpSoEjvikOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKCGh-LXhT3WE4PNb3pkaLNN1X4897iSixZvgKfsSYwel--PUtzflThnyzi6DFj0uDOpzcLGcS2TKnodTowxmuBqh9ujNDyM-Qx56RTezlI1UN0NYVEcTJtMpS0KNHdFtkg&lib=MloTWJqbkEfscCIs94IfnzfglxxFqmn7r"
     );
     const data = await response.json();
     return data;
@@ -48,7 +49,9 @@ function App() {
       const data = snapshot.val();
       setData(data);
     });
-    getSheetsData().then((data) => setSheets(data));
+    getSheetsData().then((data) => {
+    console.log(data)
+    setSheets(data)});
     
   }, []);
 
@@ -63,7 +66,7 @@ function App() {
             <Row className="pt-2">
               <Routes>
                 <Route exact path="/" element={<DataList data={data} changePump={changePump} />} />
-                <Route exact path="/stats" element={<Stats data={sheets} />} />
+                <Route exact path="/stats" element={<Stats data={sheets.data} />} />
                 <Route exact path="/aboutus" element={<AboutUs/>} />
                 <Route exact path="/detection" element={<Detection/>} />
               </Routes>

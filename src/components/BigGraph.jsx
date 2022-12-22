@@ -22,11 +22,11 @@ return (
       <Legend />
       <Line
         type="monotone"
-        dataKey="temperature"
+        dataKey="Temperature"
         stroke="#8884d8"
         activeDot={{ r: 8 }}
       />
-      <Line type="monotone" dataKey="humidity" stroke="#82ca9d" />
+      <Line type="monotone" dataKey="Humidity" stroke="#82ca9d" />
     </LineChart>
     )
 }

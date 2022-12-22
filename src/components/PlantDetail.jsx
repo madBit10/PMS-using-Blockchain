@@ -44,12 +44,12 @@ function PlantDetail({ photo }) {
         <hr className="line" />
       </Row>
       <Row className="d-flex justify-content-center">
-        {showCam == true ? (<img src={photoUrl} style={{
+        {showCam === true ? (<img alt="" src={photoUrl} style={{
           height: `200px`,
           width: `auto`,
         }}/>):(<Icon icon_name="plant.png" h="200px" w="200px" />)}
       </Row>
-      <center><Button className="mt-2 mb-2 p-butt" onClick={handleCam} >{showCam == true ? 'Plant' : 'Camera'}</Button>{' '}</center>
+      <center><Button className="mt-2 mb-2 p-butt" onClick={handleCam} >{showCam === true ? 'Plant' : 'Camera'}</Button>{' '}</center>
       <Row className="box-row">
         <Col md={1}></Col>
         <Col md={5} className="fluid card-bg-1">

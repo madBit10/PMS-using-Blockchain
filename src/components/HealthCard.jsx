@@ -21,22 +21,22 @@ export const HealthCard = (props) => {
     >
       {props.data.is_plant ? (
         <>
-          <Modal.Header closeButton>
+          <Modal.Header closeButton className='card-ab '>
             <Modal.Title id="contained-modal-title-vcenter">
               {props.data.health_assessment.is_healthy
-                ? 'Your plant is healthy (test accuracy:' +
+                ? 'Your plant is healthy (is healthy probability:' +
                   props.data.health_assessment.is_healthy_probability
                     .toString()
-                    .slice(3, 5) +
-                  ')'
-                : 'Plant ded Lmao(test accuracy:' +
+                    .slice(2, 4) +
+                  '%)'
+                : 'Plant is not healthy (is healthy probability:' +
                   props.data.health_assessment.is_healthy_probability
                     .toString()
-                    .slice(3, 5) +
+                    .slice(2, 4) +
                   '%)'}
             </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+          </Modal.Header >
+          <Modal.Body className='card-ab '>
             {props.data.health_assessment.is_healthy ? (
               <>
                 {
@@ -47,7 +47,7 @@ export const HealthCard = (props) => {
               <>
                 <Row>
                   {
-                    'We have 3 suggestions for the following image (ordered in terms of probability).'
+                    'We have 2 suggestions for the following image (ordered in terms of probability).'
                   }
                 </Row>
                 <Row>

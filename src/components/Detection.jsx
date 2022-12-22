@@ -157,7 +157,7 @@ const handleIdShow = () => {
             className="img-holder"
             style={{ width: "300px", height: "256px" }}
           >
-            <img
+            <img alt=""
               src={file}
               style={{ width: "300px", height: "256px", objectFit: "cover" }}
               accept="image/*"
@@ -203,7 +203,7 @@ const handleIdShow = () => {
           </Row>
         </Card.Body>
       </Card>
-<PlantIdCard show={idshow}
+<PlantIdCard show={idshow} 
         onHide={() => {setIdShow(false)}} data={plantIdentification}/>
 
 

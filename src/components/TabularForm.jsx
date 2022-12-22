@@ -16,13 +16,13 @@ function TabularForm({ data }) {
           </tr>
         </thead>
         <tbody>
-          {data != undefined ? (
+          {data !== undefined ? (
             data.map((data, index) => (
               <tr data-index={index}>
                 <td>{index + 1}</td>
-                <td>{data.timeofdata.substr(11, 5)}</td>
-                <td>{data.humidity}</td>
-                <td>{data.temperature}</td>
+                <td>{data.Date.substr(11, 5)}</td>
+                <td>{data.Humidity}</td>
+                <td>{data.Temperature}</td>
               </tr>
             ))
           ) : (
