@@ -50,7 +50,7 @@ export const HealthCard = (props) => {
                     'We have 2 suggestions for the following image (ordered in terms of probability).'
                   }
                 </Row>
-                <Row>
+                {/* <Row>
                   {'1)' +
                     props.data.health_assessment.diseases[0].name +
                     '(' +
@@ -65,7 +65,24 @@ export const HealthCard = (props) => {
                     props.data.health_assessment.diseases[1].disease_details
                       .description +
                     ')'}
-                </Row>
+                </Row> */}
+                {props.data.health_assessment.diseases
+                .filter((a,i)=>{
+        
+        if (i<=1){
+         return a
+        }
+      }).map((a,i)=>{
+       return (<Row>
+        {i+1+")" +
+          a.name +
+          '(' +
+          a.disease_details
+            .description +
+          ')'}
+      </Row>)
+    })
+      }
               </>
             )}
           </Modal.Body>

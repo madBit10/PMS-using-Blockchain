@@ -41,9 +41,9 @@ function TabularForm({ data }) {
   const rows = data.map((value, i) => {
     return {
       id: i + 1,
-      date: value.Date.substr(11, 5),
-      humidity: value.Humidity,
-      temperature: value.Temperature,
+      date: value.timeofdata.substr(11, 5),
+      humidity: value.humidity,
+      temperature: value.temperature,
     };
   });
   return (

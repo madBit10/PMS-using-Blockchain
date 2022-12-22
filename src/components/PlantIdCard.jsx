@@ -28,9 +28,20 @@ export const PlantIdCard = (props) => {
     </Modal.Header>
     <Modal.Body className='card-ab '>{(props.data.is_plant)?
       (<><Row>{"We have 3 suggestions for the following image (ordered in terms of probability)."}</Row>
-      <Row>{"1)"+props.data.suggestions[0].plant_name+"(Also commonly known as "+props.data.suggestions[0].plant_details.common_names[0]+")"}</Row>
+      {/* <Row>{"1)"+props.data.suggestions[0].plant_name+"(Also commonly known as "+props.data.suggestions[0].plant_details.common_names[0]+")"}</Row>
       <Row>{"2)"+props.data.suggestions[1].plant_name+"(Also commonly known as "+props.data.suggestions[1].plant_details.common_names[0]+")"}</Row>
-      <Row>{"3)"+props.data.suggestions[2].plant_name+"(Also commonly known as "+props.data.suggestions[2].plant_details.common_names[0]+")"}</Row></>)
+      <Row>{"3)"+props.data.suggestions[2].plant_name+"(Also commonly known as "+props.data.suggestions[2].plant_details.common_names[0]+")"}</Row> */}
+      {props.data.suggestions.filter((a,i)=>{
+        
+        if (i<=2){
+         return a
+        }
+      }).map((a,i)=>{
+       return (<Row>{i+1+")"+a.plant_name+"(Also commonly known as "+a.plant_details.common_names[0]+")"}</Row>)
+    })
+      }
+
+      </>)
       :(<></>)}
     </Modal.Body>
     {/* <Modal.Footer>
