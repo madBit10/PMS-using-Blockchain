@@ -165,6 +165,10 @@ body::-webkit-scrollbar {
     color: #58896b;
 }
 
+.side{
+  background-color: #e0f9e2;
+}
+
 .p-butt{
     background-color: #58896b;
     color: #e0f9e2;

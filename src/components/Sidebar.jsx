@@ -65,19 +65,19 @@ function Sidebar() {
             <Icon icon_name="logo.jpg" h="5rem" w="5rem" />
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="side">
           <Nav defaultActiveKey="/home" className="flex-column">
           <NavLink  activeClassName='active-link' to='/'>
-            <Nav.Link className="link">Home</Nav.Link>
+            <Nav.Link className="link" href="/">Home</Nav.Link>
           </NavLink>
           <NavLink  activeClassName='active-link' to='/aboutus'>
-            <Nav.Link className="link">About</Nav.Link>
+            <Nav.Link className="link" href="/aboutus">About</Nav.Link>
           </NavLink>
           <NavLink  activeClassName='active-link' to='/stats'>
-            <Nav.Link className="link">Stats</Nav.Link>
+            <Nav.Link className="link" href="/stats">Stats</Nav.Link>
           </NavLink>
           <NavLink  activeClassName='active-link' to='/detection'>
-            <Nav.Link className="link">Detecion</Nav.Link>
+            <Nav.Link className="link" href="/detection">Detecion</Nav.Link>
           </NavLink>
           </Nav>
         </Offcanvas.Body>
