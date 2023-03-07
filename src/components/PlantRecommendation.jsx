@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const PlantRecommendation = () => {
+  const [crop, setCrop] = useState()
+  
   return (
     <Card
       className="mx-auto mt-6 card-ab scale-up-center"
@@ -16,6 +18,8 @@ const PlantRecommendation = () => {
         K: 0,
         temp: 0,
         humidity: 0,
+        ph:0,
+        rainfall:0,
         model: 'svm'
        }}
       //  validate={values => {
@@ -29,11 +33,22 @@ const PlantRecommendation = () => {
       //    }
       //    return errors;
       //  }}
-       onSubmit={(values, { setSubmitting }) => {
-         setTimeout(() => {
-           alert(JSON.stringify(values, null, 2));
+       onSubmit={async(values, { setSubmitting }) => {
+        
+
+           const okay=await fetch(`http://127.0.0.1:5000/predict?model=${values.model}&n=${values.N}&p=${values.P}&k=${values.K}&temperature=${values.temp}&humidity=${values.humidity}&ph=${values.ph}&rainfall=${values.rainfall}`  )
+           const kk= await okay.json()
+           console.log(kk) 
+           setCrop(kk)
            setSubmitting(false);
-         }, 400);
+
+      
+        //  setTimeout(() => {
+        //   //  alert(JSON.stringify(values, null, 2));
+
+        //    console.log(values)
+        //    setSubmitting(false);
+        //  }, 400);
        }}
      >
        {({ isSubmitting }) => (
@@ -60,6 +75,14 @@ const PlantRecommendation = () => {
            <Field type="number" name="humidity" />
           </div>
           <div className="form-group row">
+          <label className="col-form-label">ph</label>
+           <Field type="number" name="ph" />
+          </div>
+          <div className="form-group row">
+          <label className="col-form-label">rainfall</label>
+           <Field type="number" name="rainfall" />
+          </div>
+          <div className="form-group row">
           <label className="col-form-label">model</label>
           <Field as="select" name="model">
              <option value="rf">Random Forest</option>
@@ -75,6 +98,7 @@ const PlantRecommendation = () => {
        )}
      </Formik>
    </div>
+   {crop && <div>{crop.crop}</div>}
     </Card>
   )
 }
