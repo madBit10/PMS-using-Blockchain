@@ -36,7 +36,7 @@ const PlantRecommendation = () => {
           //  }}
           onSubmit={async (values, { setSubmitting }) => {
             const okay = await fetch(
-              `http://127.0.0.1:5000/predict?model=${values.model}&n=${values.N}&p=${values.P}&k=${values.K}&temperature=${values.temp}&humidity=${values.humidity}&ph=${values.ph}&rainfall=${values.rainfall}`
+              `http://127.0.0.1:5000/predict?n=${values.N}&p=${values.P}&k=${values.K}&temperature=${values.temp}&humidity=${values.humidity}&ph=${values.ph}&rainfall=${values.rainfall}`
             )
             const kk = await okay.json()
             console.log(kk)
@@ -132,7 +132,7 @@ const PlantRecommendation = () => {
                   </div>
                 </Col>
                 <Col>
-                  <div className="form-group row p-2">
+                  {/* <div className="form-group row p-2">
                     <label className="col-form-label">model</label>
                     <Field
                       as="select"
@@ -143,7 +143,7 @@ const PlantRecommendation = () => {
                       <option value="dt">Deceision tree</option>
                       <option value="svm">SVM</option>
                     </Field>
-                  </div>
+                  </div> */}
                 </Col>
               </Row>
               {/* <ErrorMessage name="password" component="div" /> */}
@@ -158,7 +158,14 @@ const PlantRecommendation = () => {
           )}
         </Formik>
       </Row>
-      {crop && <div>{crop.crop}</div>}
+      <div className="mx-auto pt-4 pb-1">
+                <center>
+                {crop && 
+                 <h5 className='p' >{crop.crop}</h5>
+                 }
+
+                </center>
+              </div>
     </Card>
   )
 }
