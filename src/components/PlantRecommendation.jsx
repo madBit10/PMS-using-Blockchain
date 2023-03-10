@@ -56,7 +56,7 @@ const PlantRecommendation = () => {
               <Row>
                 <Col>
                   <div className="form-group row p-2">
-                    <label className="col-form-label">N</label>
+                    <label className="col-form-label">Nitrogen</label>
                     <Field
                       type="number"
                       className="form-control input-bg"
@@ -67,7 +67,7 @@ const PlantRecommendation = () => {
                 {/* <ErrorMessage name="email" component="div" /> */}
                 <Col>
                   <div className="form-group row p-2">
-                    <label className="col-form-label">P</label>
+                    <label className="col-form-label">Phosporous</label>
                     <Field
                       type="number"
                       className="form-control input-bg"
@@ -79,7 +79,7 @@ const PlantRecommendation = () => {
               <Row>
                 <Col>
                   <div className="form-group row p-2">
-                    <label className="col-form-label">K</label>
+                    <label className="col-form-label">Potasium(K)</label>
                     <Field
                       type="number"
                       className="form-control input-bg"
@@ -161,7 +161,7 @@ const PlantRecommendation = () => {
       <div className="mx-auto pt-4 pb-1">
                 <center>
                 {crop && 
-                 <h5 className='p' >{crop.crop}</h5>
+                <div>Most suitable crop is <h5 className='p' >{crop.crop}</h5></div>
                  }
 
                 </center>
