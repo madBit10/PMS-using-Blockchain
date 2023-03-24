@@ -160,6 +160,7 @@ const PlantRecommendation = () => {
       </Row>
       <div className="mx-auto pt-4 pb-1">
                 <center>
+                
                 {crop && 
                 <div>Most suitable crop is <h5 className='p' >{crop.crop}</h5></div>
                  }
