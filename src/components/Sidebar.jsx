@@ -66,6 +66,13 @@ function Sidebar() {
           </NavLink>
         </h1>
       </Col>
+      <Col xs={2} md={1} className="text-color-primary">
+        <h1>
+          <NavLink to="/fertilizer">
+            <MdRecommend className="nav-icons" />
+          </NavLink>
+        </h1>
+      </Col>
       <Offcanvas show={show} onHide={handleClose} style={{ width: '200px' }}>
         <Offcanvas.Header closeButton style={background}>
           <Offcanvas.Title>

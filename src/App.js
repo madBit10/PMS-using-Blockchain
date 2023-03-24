@@ -12,6 +12,7 @@ import Stats from './components/Stats'
 import AboutUs from './components/AboutUs'
 import { Detection } from './components/Detection'
 import PlantRecommendation from './components/PlantRecommendation'
+import FertilizerRecommendation from './components/FertilizerRecommendation'
 
 function App() {
   //Firebase data
@@ -74,6 +75,7 @@ function App() {
                 <Route exact path="/aboutus" element={<AboutUs />} />
                 <Route exact path="/detection" element={<Detection />} />
                 <Route exact path="/recommendation" element={<PlantRecommendation/>} />
+                <Route exact path="/fertilizer" element={<FertilizerRecommendation/>} />
               </Routes>
             </Row>
           </Col>
