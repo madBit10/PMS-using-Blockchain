@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Card from 'react-bootstrap/Card'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { Row, Col } from 'react-bootstrap'
 
 const FertilizerRecommendation = () => {
+    const [result, setResult] = useState({})
   return (
     <Card
     className="mx-auto mt-6 card-ab scale-up-center"
@@ -24,11 +25,12 @@ const FertilizerRecommendation = () => {
        
         onSubmit={async (values, { setSubmitting }) => {
           const okay = await fetch(
-            `http://127.0.0.1:5000/fertilizer?cropname=${values.crop}&n=${values.N}&p=${values.P}&k=${values.K}`
-          )
+            // `http://127.0.0.1:5000/fertilizer?cropname=${values.crop}&nitrogen=${values.N}&phosphorous=${values.P}&potassium=${values.K}`
+         `http://127.0.0.1:5000/fertilizer?cropname=${values.crop}&nitrogen=${values.N}&phosphorous=${values.P}&pottasium=${values.K}`
+            )
           const kk = await okay.json()
           console.log(kk)
-        //   setCrop(kk)
+          setResult(kk)
         console.log(kk)
           setSubmitting(false)
 
@@ -75,7 +77,7 @@ const FertilizerRecommendation = () => {
                 <div className="form-group row p-2">
                   <label className="col-form-label">Crop</label>
                   <Field
-                    type="number"
+                    type="String"
                     className="form-control input-bg"
                     name="crop"
                   />
@@ -97,9 +99,7 @@ const FertilizerRecommendation = () => {
     </Row>
     <div className="mx-auto pt-4 pb-1">
               <center>
-              {/* {crop && 
-              <div>Most suitable crop is <h5 className='p' ></h5></div>
-               } */}
+              
 
               </center>
             </div>
