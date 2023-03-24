@@ -11,6 +11,7 @@ import { BsInfoSquareFill } from 'react-icons/bs'
 import { ImStatsDots } from 'react-icons/im'
 import { FaDisease } from 'react-icons/fa'
 import { MdRecommend } from 'react-icons/md'
+import { GiFertilizerBag } from "react-icons/gi";
 
 function Sidebar() {
   //offcanvas states
@@ -38,13 +39,13 @@ function Sidebar() {
           </NavLink>
         </h1>
       </Col>
-      <Col xs={2} md={1} className="text-color-primary">
+      {/* <Col xs={2} md={1} className="text-color-primary">
         <h1>
           <NavLink to="/aboutus">
             <BsInfoSquareFill className="nav-icons" />
           </NavLink>
         </h1>
-      </Col>
+      </Col> */}
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
           <NavLink to="/stats">
@@ -69,7 +70,7 @@ function Sidebar() {
       <Col xs={2} md={1} className="text-color-primary">
         <h1>
           <NavLink to="/fertilizer">
-            <MdRecommend className="nav-icons" />
+            <GiFertilizerBag className="nav-icons" />
           </NavLink>
         </h1>
       </Col>
@@ -86,11 +87,6 @@ function Sidebar() {
                 Home
               </Nav.Link>
             </NavLink>
-            <NavLink activeClassName="active-link" to="/aboutus">
-              <Nav.Link className="link" href="/aboutus">
-                About
-              </Nav.Link>
-            </NavLink>
             <NavLink activeClassName="active-link" to="/stats">
               <Nav.Link className="link" href="/stats">
                 Stats
@@ -98,10 +94,21 @@ function Sidebar() {
             </NavLink>
             <NavLink activeClassName="active-link" to="/detection">
               <Nav.Link className="link" href="/detection">
-                Detecion
+                Detection
               </Nav.Link>
             </NavLink>
-          </Nav>
+          <NavLink activeClassName="active-link" to="/aboutus">
+              <Nav.Link className="link" href="/aboutus">
+                Plant  Recommendation
+              </Nav.Link>
+            </NavLink>
+            <NavLink activeClassName="active-link" to="/aboutus">
+              <Nav.Link className="link" href="/aboutus">
+                Fertilizer Recommendation
+              </Nav.Link>
+            </NavLink>
+            </Nav>
+
         </Offcanvas.Body>
       </Offcanvas>
     </>

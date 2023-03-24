@@ -2,11 +2,17 @@ import React,{useState} from 'react'
 import Card from 'react-bootstrap/Card'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { Row, Col } from 'react-bootstrap'
+import { FertilizerCard } from './FertilizerCard'
 
 const FertilizerRecommendation = () => {
-    const [result, setResult] = useState({})
+    const [result, setResult] = useState({recommendation:[]})
+    const [resultmodal, setResultModal] = useState(false)
+    const [error, setError] = useState("")
+
+    const handleClose = () => setResultModal(false);
+    const handleShow = () => setResultModal(true);
   return (
-    <Card
+<>    <Card
     className="mx-auto mt-6 card-ab scale-up-center"
     style={{ width: '80%' }}
   >
@@ -26,15 +32,22 @@ const FertilizerRecommendation = () => {
         onSubmit={async (values, { setSubmitting }) => {
           const okay = await fetch(
             // `http://127.0.0.1:5000/fertilizer?cropname=${values.crop}&nitrogen=${values.N}&phosphorous=${values.P}&potassium=${values.K}`
-         `http://127.0.0.1:5000/fertilizer?cropname=${values.crop}&nitrogen=${values.N}&phosphorous=${values.P}&pottasium=${values.K}`
+         `http://127.0.0.1:5000/fertilizer?cropname=${(values.crop).toLowerCase()}&nitrogen=${values.N}&phosphorous=${values.P}&pottasium=${values.K}`
             )
+            console.log(okay)
+            if(okay.status===400){
+                setError("The crop is not in our dataset we will make sure to add it as soon as possible")
+                setSubmitting(false)
+            }else{
+            
           const kk = await okay.json()
-          console.log(kk)
+          
           setResult(kk)
-        console.log(kk)
+          handleShow()
+          console.log(kk)
           setSubmitting(false)
-
-         
+                setError("")
+            }
         }}
       >
         {({ isSubmitting }) => (
@@ -97,13 +110,11 @@ const FertilizerRecommendation = () => {
         )}
       </Formik>
     </Row>
-    <div className="mx-auto pt-4 pb-1">
-              <center>
-              
-
-              </center>
-            </div>
+  <div>{error?error:""}</div>
   </Card>
+  <FertilizerCard show={resultmodal} 
+        onHide={() => {setResultModal(false)}} data={result}/>
+</>
   )
 }
 
