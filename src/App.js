@@ -51,7 +51,7 @@ function App() {
       setData(data)
     })
     getSheetsData().then((data) => {
-      console.log(data)
+      // console.log(data)
       setSheets(data)
     })
   }, [])
