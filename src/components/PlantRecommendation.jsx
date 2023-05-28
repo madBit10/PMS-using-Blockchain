@@ -36,8 +36,9 @@ const PlantRecommendation = () => {
           //  }}
           onSubmit={async (values, { setSubmitting }) => {
             const okay = await fetch(
-              `http://127.0.0.1:5000/predict?n=${values.N}&p=${values.P}&k=${values.K}&temperature=${values.temp}&humidity=${values.humidity}&ph=${values.ph}&rainfall=${values.rainfall}`
-            )
+              `https://pmsrecommender.onrender.com/predict?n=${values.N}&p=${values.P}&k=${values.K}&temperature=${values.temp}&humidity=${values.humidity}&ph=${values.ph}&rainfall=${values.rainfall}`
+              // http://127.0.0.1:5000
+              )
             const kk = await okay.json()
             console.log(kk)
             setCrop(kk)

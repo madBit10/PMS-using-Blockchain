@@ -32,8 +32,8 @@ const FertilizerRecommendation = () => {
         onSubmit={async (values, { setSubmitting }) => {
           const okay = await fetch(
             // `http://127.0.0.1:5000/fertilizer?cropname=${values.crop}&nitrogen=${values.N}&phosphorous=${values.P}&potassium=${values.K}`
-         `http://127.0.0.1:5000/fertilizer?cropname=${(values.crop).toLowerCase()}&nitrogen=${values.N}&phosphorous=${values.P}&pottasium=${values.K}`
-            )
+         `https://pmsrecommender.onrender.com/fertilizer?cropname=${(values.crop).toLowerCase()}&nitrogen=${values.N}&phosphorous=${values.P}&pottasium=${values.K}`
+         ,{mode:'cors'} )
             console.log(okay)
             if(okay.status===400){
                 setError("The crop is not in our dataset we will make sure to add it as soon as possible")
