@@ -1,6 +1,7 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import DataCards from './DataCards';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import DataCards from "./DataCards";
+import AddData from "./AddData";
 const DataList = ({ data, changePump }) => {
   return (
     <>
@@ -19,11 +20,16 @@ const DataList = ({ data, changePump }) => {
           <DataCards type="humid" data={data.Humidity} />
         </Col>
         <Col sm={4}>
-          <DataCards
+          {/* <DataCards
             type="pump"
             data={data.Pump}
             changePump={changePump}
             userPump={data.UserPump}
+          /> */}
+          <AddData
+            temp={data.Temperature}
+            humidity={data.Humidity}
+            moisture={data.Moisture}
           />
         </Col>
       </Row>

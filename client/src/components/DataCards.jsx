@@ -2,8 +2,9 @@ import DataIcons from "./icons/DataIcons";
 import LiveChart from "../components/LiveChart";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import AddData from "./AddData";
 const DataCards = ({ type, data, changePump, userPump }) => {
-  const [chartData, setChartData] = useState([0, 0, 0, 0, 0]);
+  const [chartData, setChartData] = useState([30, 0, 0, 0, 0]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,8 +16,8 @@ const DataCards = ({ type, data, changePump, userPump }) => {
   }, [chartData]);
 
   const handleChange = (e) => {
-    changePump()
-  }
+    changePump();
+  };
 
   let parameters;
   let color;
@@ -50,8 +51,6 @@ const DataCards = ({ type, data, changePump, userPump }) => {
     units = "%";
   }
 
-
-
   return (
     <>
       <div className="mt-3 card-shape scale-up-center">
@@ -65,7 +64,13 @@ const DataCards = ({ type, data, changePump, userPump }) => {
           <div id="units" style={{ color: `${color}` }}>
             {units}
           </div>
-          { type === 'pump' ? (<Button className="mt-2 mb-2 p-butt" onClick={handleChange} >{userPump === 0 ? 'Off' : 'On'}</Button>) : (<LiveChart data={chartData} color={color}/>)}
+          {type === "pump" ? (
+            <Button className="mt-2 mb-2 p-butt" onClick={handleChange}>
+              {userPump === 0 ? "Off" : "On"}
+            </Button>
+          ) : (
+            <LiveChart data={chartData} color={color} />
+          )}
         </div>
       </div>
     </>
